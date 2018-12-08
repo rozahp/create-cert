@@ -24,12 +24,14 @@ Please feel free to copy, distribute and change it in any way you like.
 5. run bin/create-root-ca.sh
 6. run bin/create-nginx-server.sh or any other script.
 
-## Remember
+## IMPORTANT
 
 1. Password above 5 characters
 2. Common Name has to be unique or creating will fail. You can edit index.txt and change that.
 
-## Push certificate to an nginx server
+## MISC
+
+### Push certificate to an nginx server
 
 ``TARGET=/etc/nginx/ssl
 rm csr/nginx.csr.pem
@@ -38,9 +40,7 @@ mv certs/nginx.cert.pem $TARGET
 cat $TARGET/nginx.cert.pem > $TARGET/nginx.cert.chain.pem
 cat $TARGET/ca.cert.pem >> $TARGET/nginx.cert.chain.pem``
 
-Install ca.cert.pem on your browser clients.
-
-## Have fun!
+### Have fun!
 
 ##
 ## EOF

@@ -21,7 +21,7 @@ Please feel free to copy, distribute and change it in any way you like.
 
 [ alternate_names ]
 
-5. 
+5. run bin/create-root-ca.sh
 
 ## Push certificate to an nginx server
 

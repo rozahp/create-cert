@@ -42,6 +42,4 @@ cat $TARGET/ca.cert.pem >> $TARGET/nginx.cert.chain.pem``
 
 ### Have fun!
 
-##
 ## EOF
-##

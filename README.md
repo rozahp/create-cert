@@ -4,7 +4,7 @@ Easily create a certificate authority for your local network. There after you ca
 
 ## AUTHOR
 
-Compiled by Phazor / Cascade 1733 for sources on the Internet.
+Compiled by Phazor / Cascade 1733 from different sources on the web.
 
 ## LICENSE
 

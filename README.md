@@ -22,6 +22,12 @@ Please feel free to copy, distribute and change it in any way you like.
 [ alternate_names ]
 
 5. run bin/create-root-ca.sh
+6. run bin/create-nginx-server.sh or any other script.
+
+## Remember
+
+1. Password above 5 characters
+2. Common Name has to be unique or creating will fail. You can edit index.txt and change that.
 
 ## Push certificate to an nginx server
 

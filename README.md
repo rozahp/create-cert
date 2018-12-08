@@ -32,7 +32,9 @@ mv certs/nginx.cert.pem $TARGET
 cat $TARGET/nginx.cert.pem > $TARGET/nginx.cert.chain.pem
 cat $TARGET/ca.cert.pem >> $TARGET/nginx.cert.chain.pem``
 
+Install ca.cert.pem on your browser clients.
 
+## Have fun!
 
 ##
 ## EOF

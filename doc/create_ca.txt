@@ -1,0 +1,176 @@
+##
+## Filename:    create_certifcate_authority.txt
+##
+## Description: instructions how to create a certificate authority
+##
+## Created:	2018-12-06
+
+=====================
+1. Create directories
+=====================
+
+mkdir ca
+cd ca
+mkdir certs crl newcerts private
+chmod 700 private
+touch index.txt
+echo 1000 > serial
+
+=========================
+2. Configure openssl.conf
+=========================
+
+.
+
+==================
+3. Create root key
+==================
+
+openssl genrsa -aes256 -out private/ca.key.pem 4096
+
+chmod 400 private/ca.key.pem
+
+=================
+4. Create root CA
+=================
+
+openssl req -config openssl.conf \
+      -key private/ca.key.pem \
+      -new x509 -days 7300 -sha256 -extensions v3_ca \
+      -out certs/ca.cert.pem
+
+chmod 444 certs/ca.cert.pem
+
+=================
+5. Verify root CA
+=================
+
+openssl x509 -noout -text -in certs/ca.cert.pem
+
+===========================
+6. Create intermediate pair 
+===========================
+
+mkdir ca/intermediate
+cd ca/intermediate
+mkdir certs crl csr newcerts private
+chmod 700 private
+touch index.txt
+echo 1000 > serial
+
+==========================
+7. Revocation track number
+==========================
+
+echo 1000 > crlnumber
+
+========================================
+8. Configure openssl.conf (intermediate)
+========================================
+
+==========================
+9. Create intermediate key
+==========================
+
+openssl genrsa -aes256 \
+      -out intermediate/private/intermediate.key.pem 4096
+
+chmod 400 intermediate/private/intermediate.key.pem
+
+============================
+10. Create intermediate cert
+============================
+
+Create Cert:
+
+openssl req -config intermediate/intermediate.conf -new -sha256 \
+      -key intermediate/private/intermediate.key.pem \
+      -out intermediate/csr/intermediate.csr.pem
+
+Sign Cert With Root CA:
+
+openssl ca -config openssl.conf -extensions v3_intermediate_ca \
+      -days 3650 -notext -md sha256 \
+      -in intermediate/csr/intermediate.csr.pem \
+      -out intermediate/certs/intermediate.cert.pem
+
+chmod 444 intermediate/certs/intermediate.cert.pem
+
+============================
+11. Verify intermediate cert
+============================
+
+openssl x509 -noout -text \
+      -in intermediate/certs/intermediate.cert.pem
+
+openssl verify -CAfile certs/ca.cert.pem \
+      intermediate/certs/intermediate.cert.pem
+
+=====================================
+12. Create the certificate chain file
+=====================================
+
+(NOT NEEDED IF ROOT CA CERT IS INSTALLED ON ALL DEVICES)
+
+cat intermediate/certs/intermediate.cert.pem \
+      certs/ca.cert.pem > intermediate/certs/ca-chain.cert.pem
+chmod 444 intermediate/certs/ca-chain.cert.pem
+
+================================
+13. Sign server and client certs
+================================
+
+=======================
+14. Create server key
+=======================
+
+(Note: omit -aes256 if you don't want password protection of key)
+
+openssl genrsa -aes256 \
+      -out intermediate/private/www.example.com.key.pem 2048
+chmod 400 intermediate/private/www.example.com.key.pem
+
+=============================
+15. Create server certificate
+=============================
+
+Create cert:
+
+openssl req -config intermediate/intermediate.conf \
+      -key intermediate/private/www.example.com.key.pem \
+      -new -sha256 -out intermediate/csr/www.example.com.csr.pem
+
+Sign cert:
+
+openssl ca -config intermediate/intermediate.conf \
+      -extensions server_cert -days 375 -notext -md sha256 \
+      -in intermediate/csr/www.example.com.csr.pem \
+      -out intermediate/certs/www.example.com.cert.pem
+
+chmod 444 intermediate/certs/www.example.com.cert.pem
+
+=============================
+16. Verify server certificate
+=============================
+
+openssl x509 -noout -text \
+      -in intermediate/certs/www.example.com.cert.pem
+
+openssl verify -CAfile intermediate/certs/ca-chain.cert.pem \
+      intermediate/certs/www.example.com.cert.pem
+
+=============================
+17. Deploy server certificate
+=============================
+
+Copy these files to the server: Apache, Nginx, etc ..
+
+ca-chain.cert.pem
+www.example.com.key.pem
+www.example.com.cert.pem
+
+
+
+##
+## EOF
+## 

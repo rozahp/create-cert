@@ -31,7 +31,7 @@ Please feel free to copy, distribute and change it in any way you like.
 
 ## MISC
 
-### Push certificate to an nginx server
+### Push certificate to your nginx server
 
     NGINX_DIR=/etc/nginx/ssl
     rm csr/nginx.csr.pem

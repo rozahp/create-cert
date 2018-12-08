@@ -33,14 +33,12 @@ Please feel free to copy, distribute and change it in any way you like.
 
 ### Push certificate to an nginx server
 
-``
-NGINX_DIR=/etc/nginx/ssl
-rm csr/nginx.csr.pem
-mv private/nginx.key.pem $NGINX_DIR
-mv certs/nginx.cert.pem $NGINX_DIR
-cat $NGINX_DIR/nginx.cert.pem > $NGINX_DIR/nginx.cert.chain.pem
-cat $NGINX_DIR/ca.cert.pem >> $NGINX_DIR/nginx.cert.chain.pem
-``
+    NGINX_DIR=/etc/nginx/ssl
+    rm csr/nginx.csr.pem
+    mv private/nginx.key.pem $NGINX_DIR
+    mv certs/nginx.cert.pem $NGINX_DIR
+    cat $NGINX_DIR/nginx.cert.pem > $NGINX_DIR/nginx.cert.chain.pem
+    cat $NGINX_DIR/ca.cert.pem >> $NGINX_DIR/nginx.cert.chain.pem
 
 ### Have fun!
 

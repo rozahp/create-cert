@@ -23,7 +23,7 @@ read X
 
 openssl req -config config/openssl.conf -key private/ca.key.pem \
 	-key private/ca.key.pem \
-	-new -x509 -days 7300 -sha256 -extensions v3_ca \
+	-new -x509 -days 3650 -sha256 -extensions v3_ca \
 	-out certs/ca.cert.pem
 
 chmod 444 certs/ca.cert.pem

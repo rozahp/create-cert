@@ -27,6 +27,7 @@ $RM crl/*
 $RM csr/*
 $RM newcerts/*
 $RM private/*
+$RM exports/*
 
 # reset index and serial
 

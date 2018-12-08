@@ -8,7 +8,7 @@ if [ ! -f bin/__filetest__ ]; then
 	exit
 fi
 
-DAYS=1095	# 3 YEARS
+DAYS=365	# 1 YEAR
 KEYSIZE=1024
 SERVER=nginx
 

@@ -8,7 +8,7 @@ if [ ! -f bin/__filetest__ ]; then
 	exit
 fi
 
-DAYS=1095	# 3 YEARS
+DAYS=365	# 1 YEARS
 KEYSIZE=1024
 SERVER=$1
 
@@ -29,14 +29,14 @@ chmod 400 private/$SERVER.key.pem
 echo -n "Log: creating server cert ... hit enter to continue ..."
 read X
 
-openssl req -config openssl-server.conf \
+openssl req -config config/openssl-server.conf \
 	-key private/$SERVER.key.pem \
 	-new -sha256 -out csr/$SERVER.csr.pem
 
 echo -n "Log: signing cert with root ca ... hit enter to continue ..."
 read X
 
-openssl ca -config openssl-server.conf \
+openssl ca -config config/openssl-server.conf \
 	-extensions server_cert -days $DAYS -notext -md sha256 \
 	-in csr/$SERVER.csr.pem \
 	-out certs/$SERVER.cert.pem

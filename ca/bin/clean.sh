@@ -25,9 +25,9 @@ $RM serial serial.old
 $RM certs/*
 $RM crl/*
 $RM csr/*
+$RM exports/*
 $RM newcerts/*
 $RM private/*
-$RM exports/*
 
 # reset index and serial
 

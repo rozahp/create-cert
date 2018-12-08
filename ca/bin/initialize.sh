@@ -14,7 +14,7 @@ fi
 
 echo "Log: initializing ca ..."
 
-$MKDIR certs crl csr export newcerts private
+$MKDIR certs crl csr exports newcerts private
 chmod 700 private
 touch index.txt
 echo 1000 > serial

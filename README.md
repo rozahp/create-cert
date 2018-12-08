@@ -27,7 +27,7 @@ Please feel free to copy, distribute and change it in any way you like.
 ## IMPORTANT
 
 1. Password above 5 characters
-2. Common Name has to be unique or creating will fail. You can edit index.txt and change that.
+2. Common Name has to be unique or scripts will fail. You can edit index.txt and change that.
 
 ## MISC
 

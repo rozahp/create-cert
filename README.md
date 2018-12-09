@@ -10,21 +10,34 @@ Compiled by Phazor / Cascade 1733 from different sources on the web.
 
 Please feel free to copy, distribute and change it in any way you like.
 
-## INSTRUCTIONS
+## A) INSTRUCTIONS FOR RUNNING A ROOT CA
 
 1. jump to the ca/ directory
 2. bin/clean.sh 
-*3. intermediate/bin/clean-intermediate.sh (if you want to run an intermediate ca)*
-4. bin/initialize.sh
-*5. intermediate/bin/initialize-intermediate.sh (if you want to run an intermediate ca)*
-6. edit config/*.conf (and/or intermediate/config/*.conf) to your liking, especially this parts:
+3. bin/initialize.sh
+4. edit config/*.conf to your liking, especially this parts:
 
 [ req_distinguished_name ]
 
 [ alternate_names ]
 
-7. run bin/create-root-ca.sh
-8. run bin/create-nginx-server.sh or any other script.
+5. run bin/create-root-ca.sh
+6. run bin/create-nginx-server.sh or any other script.
+
+## B) INSTRUCTIONS FOR RUNNING AN INTERMEDIATE CA
+
+1. Create an ca from above instructions.
+1. Still running from the ca/ directory
+2. intermediate/bin/clean-intermediate.sh 
+3. intermediate/bin/initialize-intermediate.sh
+4. edit intermediate/config/*.conf to your liking, especially this parts:
+
+[ req_distinguished_name ]
+
+[ alternate_names ]
+
+5. run bin/create-root-ca.sh
+6. run bin/create-nginx-server.sh or any other script.
 
 ## IMPORTANT
 

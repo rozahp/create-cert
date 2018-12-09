@@ -10,7 +10,7 @@ Compiled by Phazor / Cascade 1733 from different sources on the web.
 
 Please feel free to copy, distribute and change it in any way you like.
 
-## A) INSTRUCTIONS FOR RUNNING A ROOT CA
+## INSTRUCTIONS FOR RUNNING A ROOT CA
 
 1. jump to the ca/ directory
 2. bin/clean.sh 
@@ -24,7 +24,7 @@ Please feel free to copy, distribute and change it in any way you like.
 5. run bin/create-root-ca.sh
 6. run bin/create-nginx-server.sh or any other script.
 
-## B) INSTRUCTIONS FOR RUNNING AN INTERMEDIATE CA
+## INSTRUCTIONS FOR RUNNING AN INTERMEDIATE CA
 
 1. Create a root ca from above instructions.
 1. We are still running from the ca/ directory

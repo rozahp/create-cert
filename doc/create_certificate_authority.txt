@@ -168,8 +168,6 @@ ca-chain.cert.pem
 www.example.com.key.pem
 www.example.com.cert.pem
 
-
-
 ##
 ## EOF
 ## 

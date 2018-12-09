@@ -13,16 +13,18 @@ Please feel free to copy, distribute and change it in any way you like.
 ## INSTRUCTIONS
 
 1. jump to the ca/ directory
-2. bin/clean.sh
-3. bin/initialize.sh
-4. edit config/{openssl.conf,openssl-nginx-server,openssl-server.conf} to your liking, especially this parts:
+2. bin/clean.sh 
+*3. intermediate/bin/clean-intermediate.sh (if you want to run an intermediate ca)*
+4. bin/initialize.sh
+*5. intermediate/bin/initialize-intermediate.sh (if you want to run an intermediate ca)*
+6. edit config/*.conf (and/or intermediate/config/*.conf) to your liking, especially this parts:
 
 [ req_distinguished_name ]
 
 [ alternate_names ]
 
-5. run bin/create-root-ca.sh
-6. run bin/create-nginx-server.sh or any other script.
+7. run bin/create-root-ca.sh
+8. run bin/create-nginx-server.sh or any other script.
 
 ## IMPORTANT
 

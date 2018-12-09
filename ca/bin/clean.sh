@@ -22,12 +22,12 @@ $RM serial serial.old
 
 # rm certificates (public/pricate)
 
-$RM certs/*
-$RM crl/*
-$RM csr/*
-$RM exports/*
-$RM newcerts/*
-$RM private/*
+$RM certs
+$RM crl
+$RM csr
+$RM exports
+$RM newcerts
+$RM private
 
 # reset index and serial
 

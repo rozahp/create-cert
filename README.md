@@ -26,8 +26,10 @@ Please feel free to copy, distribute and change it in any way you like.
 
 ## IMPORTANT
 
-1. Password above 5 characters
-2. Common Name has to be unique or scripts will fail. You can edit index.txt and change that.
+1. Common Name has to be unique or process will fail, but ...
+2. You can edit index.txt and change registered CN to something random and circumvent 1.
+3. Pass phrase for Root CA is a very, very, very good option.
+4. If you want strict pass phrase policy: edit the scripts accordingly.
 
 ## MISC
 

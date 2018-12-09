@@ -3,7 +3,6 @@
 ##
 ## Description: instructions how to create a certificate authority
 ##
-## Created:	2018-12-06
 
 =====================
 1. Create directories

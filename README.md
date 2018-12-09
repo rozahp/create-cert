@@ -1,6 +1,6 @@
 # Base for creating a certificate authority
 
-Easily create a certificate authority for your local network. There after you can create client and server certificates for many usages. It's really very fun!
+Easily create a certificate authority for your local network. Thereafter you can create client and server certificates for many different usages. It's really very fun and empowering!
 
 ## AUTHOR
 

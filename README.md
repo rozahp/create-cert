@@ -26,8 +26,8 @@ Please feel free to copy, distribute and change it in any way you like.
 
 ## B) INSTRUCTIONS FOR RUNNING AN INTERMEDIATE CA
 
-1. Create an ca from above instructions.
-1. Still running from the ca/ directory
+1. Create a root ca from above instructions.
+1. We are still running from the ca/ directory
 2. intermediate/bin/clean-intermediate.sh 
 3. intermediate/bin/initialize-intermediate.sh
 4. edit intermediate/config/*.conf to your liking, especially this parts:

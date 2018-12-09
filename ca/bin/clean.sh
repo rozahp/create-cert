@@ -32,7 +32,7 @@ $RM private
 touch index.txt
 echo 1000 > serial
 
-echo "[INFO] done!"
+echo "[INFO] done! (run intermediate/bin/clean-intermediate.sh if applicable)"
 
 ##
 ## EOF

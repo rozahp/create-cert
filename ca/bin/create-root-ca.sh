@@ -21,7 +21,6 @@ chmod 400 private/ca.key.pem
 echo "[INFO] creating root ca certificate ..."
 
 openssl req -config config/openssl.conf -key private/ca.key.pem \
-	-key private/ca.key.pem \
 	-new -x509 -days $DAYS -sha256 -extensions v3_ca \
 	-out certs/ca.cert.pem
 

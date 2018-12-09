@@ -69,7 +69,7 @@ echo "[INFO]"
 echo "[INFO]    2. private/$CLIENT.key.pem"
 echo "[INFO]    3. certs/$CLIENT.cert.pem"
 echo "[INFO]    4. exports/$CLIENT.p12 (for browsers)"
-echo "[INFO]    5. export/$CLIENT.pem (for openssl programs)"
+echo "[INFO]    5. exports/$CLIENT.pem (for openssl programs)"
 echo "[INFO]"
 echo "[INFO] done!"
 

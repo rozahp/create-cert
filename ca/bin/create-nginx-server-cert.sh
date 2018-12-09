@@ -3,14 +3,15 @@
 ## Filename:	create-server-cert.sh
 ##
 
+KEYSIZE=1024
+DAYS=365
+SERVER=nginx
+
 if [ ! -f bin/__filetest__ ]; then
 	echo "[ERROR] please run script from ca-directory."
 	exit
 fi
 
-DAYS=365	# 1 YEAR
-KEYSIZE=1024
-SERVER=nginx
 
 echo "[INFO] creating server key ... (add genrsa -aes256 for password protection)"
 

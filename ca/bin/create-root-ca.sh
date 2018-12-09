@@ -6,6 +6,7 @@
 ##
 
 KEYSIZE=2048
+DAYS=3650
 
 if [ ! -f bin/__filetest__ ]; then
 	echo "[ERROR] please run script from ca-directory."
@@ -21,7 +22,7 @@ echo "[INFO] creating root ca certificate ..."
 
 openssl req -config config/openssl.conf -key private/ca.key.pem \
 	-key private/ca.key.pem \
-	-new -x509 -days 3650 -sha256 -extensions v3_ca \
+	-new -x509 -days $DAYS -sha256 -extensions v3_ca \
 	-out certs/ca.cert.pem
 
 chmod 444 certs/ca.cert.pem

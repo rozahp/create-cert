@@ -3,14 +3,14 @@
 ## Filename:	create-client-cert.sh
 ##
 
+KEYSIZE=1024
+DAYS=365
+CLIENT=$1
+
 if [ ! -f bin/__filetest__ ]; then
 	echo "[ERROR] please run script from ca-directory."
 	exit
 fi
-
-DAYS=365	# 1 YEAR
-KEYSIZE=1024
-CLIENT=$1
 
 if [ "a"$CLIENT = "a" ]; then
 	echo "[ERROR] no argument (=name of cert)"

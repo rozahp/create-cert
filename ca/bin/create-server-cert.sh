@@ -3,14 +3,14 @@
 ## Filename:	create-server-cert.sh
 ##
 
+KEYSIZE=1024
+DAYS=365
+SERVER=$1
+
 if [ ! -f bin/__filetest__ ]; then
 	echo "[ERROR] please run script from ca-directory ..."
 	exit
 fi
-
-DAYS=365	# 1 YEARS
-KEYSIZE=1024
-SERVER=$1
 
 if [ "a"$SERVER = "a" ]; then
 	echo "[ERROR] no argument (=server name)"

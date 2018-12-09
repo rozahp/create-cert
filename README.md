@@ -36,8 +36,8 @@ Please feel free to copy, distribute and change it in any way you like.
 
 [ alternate_names ]
 
-5. run bin/create-root-ca.sh
-6. run bin/create-nginx-server.sh or any other script.
+5. run intermediate/bin/create-intermediate-ca.sh
+6. run intermediate/bin/create-intermediate-nginx-server.sh or any other script.
 
 ## IMPORTANT
 

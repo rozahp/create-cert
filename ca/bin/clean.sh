@@ -6,18 +6,16 @@
 ##
 
 if [ ! -f bin/__filetest__ ]; then
-	echo "Err: please run script for ca-directory ..."
+	echo "[ERROR] please run script for ca-directory"
 	exit
 fi
 
-echo "Log: cleaning up ca-directory ..."
+echo "[INFO] cleaning up ca-directory"
 
-RM="rm -f"
+RM="rm -fr"
 
-# rm index.txt
 $RM index.txt*
 
-# rm serial
 $RM serial serial.old
 
 # rm certificates (public/pricate)
@@ -34,7 +32,7 @@ $RM private
 touch index.txt
 echo 1000 > serial
 
-echo "Log: Done!"
+echo "[INFO] done!"
 
 ##
 ## EOF
